@@ -1,0 +1,29 @@
+img {
+    width: 200px;
+    height: 200px;
+    }
+
+input {
+align-content: flex-start;
+}
+
+#pasus{
+display : flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+#pasus > div {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    background-color: dimgrey;
+}
+
+button {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
