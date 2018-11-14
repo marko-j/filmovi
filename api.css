@@ -1,0 +1,11 @@
+img {
+width: 200px;
+height: 200px;
+}
+
+input {
+align-content: flex-start;
+}
+button {
+    align-content: flex-end;
+}

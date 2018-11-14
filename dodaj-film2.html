@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dodaj film</title>
+</head>
+<body>
+    <h1>Dodaj film</h1>
+    Naziv 
+    <br/>
+    <form id="obrazac" action="https://baza-filmova.herokuapp.com/dodaj-film/" method="POST">
+    <input type="text" name = "naziv" id = "naslov" required>
+    <br/>
+    Godina
+    <br/>
+    <input type ="number" name ="godina" id = "god" required>
+    <br/>
+    Slika
+    <br/>
+    <input type="text" name = "slika" id="pic" required>
+    <button type="submit">Unesi</button>
+    <br/>
+    <div id="preview"></div>
+    </form>
+    
+    
+    <script src="dodaj-film.js"></script>
+    
+</body>
+</html>
