@@ -10,24 +10,27 @@ const ws = new WebSocket('ws://baza-filmova.herokuapp.com/filmovi');
 function render(niz) {
   paragraph.innerHTML = '';
   for (let i = 0; i < niz.length; i += 1) {
+    const okvir = document.createElement('div');
     const naziv = document.createElement('p');
     naziv.innerText += niz[i].naziv;
-    paragraph.appendChild(naziv);
+    okvir.appendChild(naziv);
 
     const dugme = document.createElement('button');
     dugme.innerText = 'x';
-    paragraph.appendChild(dugme);
+    okvir.appendChild(dugme);
     dugme.addEventListener('click', () => {
       obrisi(niz[i]._id);
     });
 
     const slika = document.createElement('img');
     slika.src += niz[i].slika;
-    paragraph.appendChild(slika);
+    okvir.appendChild(slika);
 
     const godina = document.createElement('p');
     godina.innerText += niz[i].godina;
-    paragraph.appendChild(godina);
+    okvir.appendChild(godina);
+
+    paragraph.appendChild(okvir);
   }
 }
 
@@ -59,6 +62,6 @@ fetch('https://baza-filmova.herokuapp.com/filmovi/')
 
 kriterij.addEventListener('keyup', filtriraj);
 
-ws.addEventListener('connection', (e) => {
-  console.log(`<h1>Server javlja: + ${e.data}</h1>`);
+ws.addEventListener('connect', (e) => {
+  console.log(`Server javlja: + ${e.data}`);
 });
